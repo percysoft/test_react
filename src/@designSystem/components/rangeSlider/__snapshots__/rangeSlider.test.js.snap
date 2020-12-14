@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Range Slider Component Component Show value quotas 1`] = `
+<div>
+  <WithStyles(WithStyles(ForwardRef(Slider)))
+    defaultValue={10000}
+    key="slider-range"
+    max={50}
+    min={1}
+    onChange={[Function]}
+    value={10000}
+    valueLabelDisplay="auto"
+  />
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <styled.div
+      bold="800"
+      color="#8230E0"
+      size="25"
+    >
+       
+      10000 cuotas
+    </styled.div>
+    <styled.div
+      bold="800"
+      size="25"
+    >
+       
+      Máximo: 50
+    </styled.div>
+  </div>
+</div>
+`;

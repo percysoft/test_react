@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Input Component show component 1`] = `
+<div>
+  <WithStyles(ForwardRef(TextField))
+    InputProps={
+      Object {
+        "inputComponent": [Function],
+      }
+    }
+    fullWidth={true}
+    id="formatted-numberformat-input"
+    inputProps={
+      Object {
+        "data-testid": "content-input",
+        "id": "content-input",
+        "pattern": "[0-9]",
+      }
+    }
+    name="numberformat"
+    onChange={[Function]}
+    value="100.00"
+  />
+  <styled.div
+    bold="300"
+    size="15"
+  >
+    Mínimo S/1 - Máximo S/ 50
+  </styled.div>
+</div>
+`;
