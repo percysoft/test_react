@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Item Detail Component Render Item  1`] = `
+<styled.div>
+  <styled.div
+    bold="300"
+    size="20"
+  >
+     
+    TEA
+  </styled.div>
+  <styled.div
+    bold="bold"
+    size="25"
+  >
+     
+    10000
+  </styled.div>
+</styled.div>
+`;
