@@ -3,5 +3,6 @@ export const COLORS = {
   TEXT:"#1A1A1A",
   WHITE:"#FFF",
   BLACK: "#000",
-  RED:'red'
+  RED:'red',
+  SHADOW: 'rgba(153,153,153,1)'
 };

@@ -1,7 +1,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { InputContainer } from './index';
-import { shallow } from 'enzyme';
+import { InputContainer } from './InputComponent';
+import { render, shallow } from 'enzyme';
+import { validator  } from './validators';
 
 describe('Test Input Component', () => {
   test('show component', () => {
@@ -17,4 +18,22 @@ describe('Test Input Component', () => {
     const wrapper_text = wrapper.find('div').text().trim();
     expect(wrapper_text).toBe(message_test);
   }) 
+  
 })
+
+describe("Filter function", () => {
+  test("validator function if no error", () => {
+    let number = 1000;
+    let min = 50;
+    let max = 2000;
+    let isError = validator(number, min, max)
+    expect(false).toBe(isError)
+  });
+  test("validator function if  error", () => {
+    let number = 20;
+    let min = 50;
+    let max = 2000;
+    let isError = validator(number, min, max)
+    expect(true).toBe(isError)
+  });
+});

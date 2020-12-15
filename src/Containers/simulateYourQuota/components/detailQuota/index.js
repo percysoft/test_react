@@ -1,8 +1,9 @@
 import React from 'react';
-import { ContainerBorder } from '../../styles';
-import { TextStyle } from '../../../../@designSystem/styles';
 import styled from 'styled-components';
 import moment from 'moment';
+import { ContainerBorder } from '../../styles';
+import { TextStyle } from '../../../../@designSystem/styles';
+
 
 export const ItemDetail = (props) => {
   const { title, amount, showBorder } = props;
@@ -20,6 +21,11 @@ const  ItemDetailQuota = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 33.33%;
+  @media only screen and (max-width: 600px) {
+    width: 100% !important;
+    border-right: none !important;
+  }
 `;
 
 export const DetailQuota = (props) => {
@@ -38,7 +44,10 @@ export const DetailQuota = (props) => {
 }
 
 const  ContainerItemDetailQuota = styled.div`
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  display: flex;
+  justify-content: space-around;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column !important;
+  }
 `;
 

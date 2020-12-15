@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { RangeSliderComponent } from './index';
+import { RangeSliderComponent } from './rangeSliderComponent';
 import { shallow } from 'enzyme';
 
 describe('Test Range Slider Component Component', () => {

@@ -14,12 +14,11 @@ exports[`Test Input Component show component 1`] = `
       Object {
         "data-testid": "content-input",
         "id": "content-input",
-        "pattern": "[0-9]",
       }
     }
     name="numberformat"
     onChange={[Function]}
-    value="100.00"
+    value={100}
   />
   <styled.div
     bold="300"

@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from '@material-ui/core/Slider';
 import { withStyles } from '@material-ui/core/styles';
-import { TextStyle } from '../../../@designSystem/styles';
 import * as PropTypes from "prop-types";
+import { TextStyle } from '../../styles';
 
 const RangeSlider = withStyles({
   root: {

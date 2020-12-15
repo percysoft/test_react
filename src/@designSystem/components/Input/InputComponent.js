@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
-import { TextStyle } from '../../styles';
 import NumberFormat from "react-number-format";
 import * as PropTypes from "prop-types";
+import { TextStyle } from '../../styles';
 import { COLORS } from '../../colors';
+import { validator } from './validators';
 
 const  NumberFormatCustom = (props) => {
   const { inputRef, onChange, ...other } = props;
@@ -29,14 +30,8 @@ export const InputContainer = (props) => {
   const { minAmount,maxAmount, setAmount, amount, setShowError,showError} = props;
  
 
-  const handleChange = (e) => {
-    let valueInput = e.target.value;
-    console.log(valueInput,'valueInput')
-    if(valueInput < minAmount ||  valueInput> maxAmount) {
-      setShowError(true)
-    } else {
-      setShowError(false)
-    }
+  const handleChange = (valueInput) => {
+    setShowError(validator(valueInput, minAmount, maxAmount))
     setAmount(valueInput)
   }
   return(
@@ -45,7 +40,7 @@ export const InputContainer = (props) => {
         inputProps={{ id: "content-input","data-testid": "content-input" }}
         fullWidth={true}
         value={amount}
-        onChange={handleChange}
+        onChange={(e) =>handleChange(e.target.value)}
         name="numberformat"
         id="formatted-numberformat-input"
         InputProps={{

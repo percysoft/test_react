@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { TextStyle, Line } from '../../@designSystem/styles';
 import { ContainerBorder } from './styles';
 import { DetailQuota } from './components/detailQuota';
-import { InputContainer } from '../../@designSystem/components/Input';
-import { RangeSliderComponent } from '../../@designSystem/components/rangeSlider';
+import { InputContainer } from '../../@designSystem/components/Input/InputComponent';
+import { RangeSliderComponent } from '../../@designSystem/components/rangeSlider/rangeSliderComponent';
 import { detailCampaigne, calculateQuota } from '../../mock';
-import { LoaderComponent } from '../../@designSystem/components/loader';
-
+import { LoaderComponent } from '../../@designSystem/components/loader/loaderComponent';
+import { COLORS } from '../../@designSystem/colors';
 export const SimulateYourQuota = () => {
   useEffect(() => {
     loadDataCampaigne();
@@ -30,8 +30,8 @@ export const SimulateYourQuota = () => {
   const loadDataCampaigne = () => {
     setShowLoader(true)
     detailCampaigne().then(data => {
-      console.log(data,'datadata')
       setDataCampaigne(data);
+      setAmount(data.min_amount)
       setShowLoader(false)
     }).catch(e => {
       setShowLoader(false)
@@ -39,6 +39,7 @@ export const SimulateYourQuota = () => {
   }
 
   const QuotaMont = () => {
+    !showError  &&
     calculateQuota(valueQuota,amount).then(data => {
       setQuotaAmount(data.monthly_amount)
     })
@@ -57,9 +58,19 @@ export const SimulateYourQuota = () => {
           <Line color="red" width="40px"/>
           <DetailQuota
             quotaAmount={quotaAmount}
-            valueQuota={valueQuota} tea={dataCampaigne.tea} paymentDate={dataCampaigne.payment_date}/>
+            valueQuota={valueQuota} 
+            tea={dataCampaigne.tea}
+            paymentDate={dataCampaigne.payment_date}
+          />
           <TextStyle bold="bold" size="20">Ingresa un monto</TextStyle>
-          <InputContainer minAmount={min_amount} maxAmount={max_amount} amount={amount} setAmount={setAmount} showError={showError} setShowError={setShowError}/>
+          <InputContainer 
+            minAmount={min_amount}
+            maxAmount={max_amount}
+            amount={amount}
+            setAmount={setAmount}
+            showError={showError}
+            setShowError={setShowError}
+          />
           <TextStyle bold="bold" size="20">Elige el número de cuotas</TextStyle>
           <RangeSliderComponent 
             minQuotas={min_quota} 
@@ -80,7 +91,7 @@ const ContainerSimulateQuota = styled(ContainerBorder)`
   display: block;
   margin: 10% auto;
   padding: 35px 50px;
-  -webkit-box-shadow: 0px 2px 16px -5px rgba(153,153,153,1);
-  -moz-box-shadow: 0px 2px 16px -5px rgba(153,153,153,1);
-  box-shadow: 0px 2px 16px -5px rgba(153,153,153,1);
+  -webkit-box-shadow: 0px 2px 16px -5px ${COLORS.SHADOW};
+  -moz-box-shadow: 0px 2px 16px -5px ${COLORS.SHADOW};
+  box-shadow: 0px 2px 16px -5px ${COLORS.SHADOW};
 `;

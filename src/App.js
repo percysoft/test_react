@@ -1,6 +1,6 @@
 import { SimulateYourQuota } from '../src/Containers/simulateYourQuota';
 
-function App() {
+const  App = () => {
   return (
     <SimulateYourQuota/>
   );

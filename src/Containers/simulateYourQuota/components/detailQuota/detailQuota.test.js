@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { ItemDetail } from './index';
 import { shallow } from 'enzyme';
+import { ItemDetail } from './index';
 
 describe('Test Item Detail Component', () => {
   test('Render Item ', () => {
